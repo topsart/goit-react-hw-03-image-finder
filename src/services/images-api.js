@@ -11,4 +11,8 @@ const fetchImages = ({ searchQuery = "", currentPage = 1 }) => {
     .then((response) => response.data.hits);
 };
 
-export default { fetchImages };
+const exportedObject = {
+  fetchImages,
+};
+
+export default exportedObject;
