@@ -2,8 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./ImageGalleryItem.module.css";
 
-const ImageGalleryItem = ({ src, alt }) => (
-  <img src={src} alt={alt} className={styles.ImageGalleryItemImage} />
+const ImageGalleryItem = ({ id, src, alt, largeImageURL, onModal }) => (
+  <li
+    key={id}
+    onClick={() => onModal(largeImageURL)}
+    className={styles.ImageGalleryItem}
+  >
+    <img src={src} alt={alt} className={styles.ImageGalleryItemImage} />
+  </li>
 );
 
 ImageGalleryItem.defaultProps = {

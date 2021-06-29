@@ -6,13 +6,13 @@ import styles from "./ImageGallery.module.css";
 const ImageGallery = ({ images, onModal }) => (
   <ul className={styles.ImageGallery}>
     {images.map(({ id, webformatURL, type, largeImageURL }) => (
-      <li
+      <ImageGalleryItem
         key={id}
-        className={styles.ImageGalleryItem}
-        onClick={() => onModal(largeImageURL)}
-      >
-        <ImageGalleryItem src={webformatURL} alt={type} />
-      </li>
+        src={webformatURL}
+        alt={type}
+        largeImageURL={largeImageURL}
+        onModal={onModal}
+      />
     ))}
   </ul>
 );
